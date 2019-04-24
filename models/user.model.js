@@ -25,9 +25,9 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Password is required'],
     minlength: [8, 'Password needs at last 8 chars']
   },
-  role: {
+  location: {
     type: String,
-    enum: ['admin', 'guess'],
+    enum: ['madrid', 'leganes'],
     default: 'guess'
   },
   social: {

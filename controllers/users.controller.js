@@ -9,14 +9,15 @@ module.exports.list = (req, res, next) => {
     .catch(error => next(error));
 }
 
-module.exports.delete = (req, res, next) => {
-  User.findByIdAndDelete(req.params.id)
-    .then(user => {
-      if (!user) {
-        next(createError(404, 'User not found'))
-      } else {
-        res.redirect('/users');
-      }
-    })
-    .catch(error => next(error));
-}
+// module.exports.delete = (req, res, next) => {
+//   User.findByIdAndDelete(req.params.id)
+//     .then(user => {
+//       if (!user) {
+//         next(createError(404, 'User not found'))
+//       } else {
+//         res.redirect('/users/list');
+//       }
+//     })
+//     .catch(error => next(error));
+// }
+

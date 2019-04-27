@@ -2,7 +2,6 @@ const User             = require('../models/user.model');
 const passport         = require('passport');
 const LocalStrategy    = require('passport-local').Strategy;
 const GoogleStrategy   = require('passport-google-oauth2').Strategy;
-//const FacebookStrategy = require('passport-facebook').Strategy;
  
 passport.serializeUser((user, next) => {
   next(null, user.id);
@@ -36,29 +35,11 @@ passport.use('local-auth', new LocalStrategy({
 }));
 
 passport.use('google-auth', new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID, // ------------------------------ FALTA CONFIGURAR ---------------------------------
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,  // ------------------------------ FALTA CONFIGURAR ---------------------------------
-  callbackURL: process.env.GOOGLE_CALLBACK_URL || '/authenticate/google/cb'  // ------------------------------ FALTA CONFIGURAR ---------------------------------
+  clientID: process.env.GOOGLE_CLIENT_ID, 
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+  callbackURL: process.env.GOOGLE_CALLBACK_URL 
 }, authenticateOAuthUser));
 
-
-  // documentación de passport http://www.passportjs.org/packages/passport-google-oauth2/
-    // var GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
-
-    // passport.use(new GoogleStrategy({
-    //   clientID:     GOOGLE_CLIENT_ID,
-    //   clientSecret: GOOGLE_CLIENT_SECRET,
-    //   callbackURL: "http://yourdormain:3000/auth/google/callback",
-    //   passReqToCallback   : true
-    // },
-    // function(request, accessToken, refreshToken, profile, done) {
-    //   User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //     return done(err, user);
-    //   });
-    // }
-    // ));
-
-  // documentación de google API https://developers.google.com/identity/sign-in/web/sign-in
 
 function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
   const provider = `${profile.provider}Id`;
@@ -74,7 +55,6 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
   })
     .then(user => {
       if (user) {
-        console.log('User------------------', user)
         next(null, user);
       } else if (!user) {
         user = new User({

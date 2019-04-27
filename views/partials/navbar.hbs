@@ -1,36 +1,54 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-      <a class="navbar-brand" href="/">CLimApp</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          {{#if session.email }}
-            <li class="nav-item">
-              <a class="nav-link {{#isActive path '/users' true }} active {{/isActive}}" href="/users">Users</a>
-            </li>
-          {{/if}}
-        </ul>
-        <ul class="navbar-nav my-2 my-lg-0">
-          {{#if session.email }}
-            <li class="nav-item">
-              <a class="nav-link" href="/profile">{{ session.email }}</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Logout</a>
-            </li>
-          {{else}}
-            <li class="nav-item">
-              <a class="nav-link {{#isActive path '/register' true }} active {{/isActive}}" href="/register">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {{#isActive path '/login' true }} active {{/isActive}}" href="/login">Login</a>
-            </li>
-          {{/if}}
-        </ul>
-      </div>
+    <a class="navbar-brand" href="/">CLimApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {{#if session.email }}
+        <li class="nav-item">
+          <a class="nav-link {{#isActive path '/users' true }} active {{/isActive}}" href="/users">Users</a>
+        </li>
+        {{/if}}
+      </ul>
+      <ul class="navbar-nav my-2 my-lg-0">
+        {{#if session.email }}
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">{{ session.email }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link {{#isActive path '/register' true }} active {{/isActive}}" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{#isActive path '/login' true }} active {{/isActive}}" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
   </div>
 </nav>
+
+{{!-- <div class="container-index">
+    <form action='/results' method='POST'>
+        <input type='text' name='artist'/>
+        <button type="submit" class="btn btn-success">Search</button>
+    </form>
+</div> --}}
+
+HOLAAAAAAAAAA
+
+<div class="container">
+  <br /><br />
+  <div align="center">
+    <input type="text" name="search" id="search" placeholder="Search Employee Details" class="form-control" />
+  </div>
+  <ul class="list-group" id="result"></ul>
+  <br />
+</div>

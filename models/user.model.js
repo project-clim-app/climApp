@@ -2,9 +2,9 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-const SALT_WORK_FACTOR = 10;
-const FIRST_ADMIN_EMAIL = process.env.FIRST_ADMIN_EMAIL || 'admin@example.org'; // ------------------------ FALTA DECLARAR ESTA VARIABLE -------------------------
-
+const SALT_WORK_FACTOR = process.env.SALT_WORK_FACTOR
+const FIRST_ADMIN_EMAIL = process.env.FIRST_ADMIN_EMAIL 
+  
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
   },
   location: {
     type: String,
-    enum: ['madrid', 'leganes'],
+    // enum: ['../data/aemet-locations.json'],
     default: 'guess'
   },
   social: {

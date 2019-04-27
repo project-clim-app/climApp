@@ -67,10 +67,6 @@ app.use('/', miscRouter);
 app.use('/', authRouter);
 app.use('/users', usersRouter);
 
-
-// default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

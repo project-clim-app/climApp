@@ -1,7 +1,6 @@
 const mongoose         = require('mongoose');
 const User             = require('../models/user.model');
 const passport         = require('passport');
-const GoogleStrategy   = require('passport-google-oauth2').Strategy;
 
 
 module.exports.register = (req, res, next) => {
@@ -52,7 +51,7 @@ module.exports.loginWithIDPCallback = (req, res, next) => {
         if(error) {
           return next(error)
         } else {
-          return res.redirect('/users');
+          return res.redirect('/profile');
         }
       })
     }

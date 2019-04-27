@@ -1,19 +1,19 @@
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
-const SESSION_MAX_AGE_SECONDS = Number(process.env.SESSION_MAX_AGE_SECONDS) || 60 * 60 * 24 * 7; // VARIABLE EXISTENTE EN .ENV
+const SESSION_MAX_AGE_SECONDS = Number(process.env.SESSION_MAX_AGE_SECONDS) || 60 * 60 * 24 * 7; 
 
 module.exports = session({
-  secret: process.env.SESSION_SECRET, // VARIABLE EXISTENTE EN .ENV
+  secret: process.env.SESSION_SECRET, 
   resave: true,
   saveUninitialized: false,
   cookie: {
-    secure: false, // VARIABLE EXISTENTE EN .ENV ---------------- REVISAR SI TRUE O FALSE --------------------
+    secure: false, 
     httpOnly: true,
-    maxAge: SESSION_MAX_AGE_SECONDS * 1000 // VARIABLE EXISTENTE EN .ENV
+    maxAge: SESSION_MAX_AGE_SECONDS * 1000 
   },
   store: new MongoStore({
-    mongooseConnection: mongoose.connection, //-------------------------- REVISAR SI ESTA INSTALADO EL MONGOSTORE y CONFIGURADO -----------------------
+    mongooseConnection: mongoose.connection, 
     ttl: SESSION_MAX_AGE_SECONDS
   })
 });

@@ -42,18 +42,21 @@ module.exports.login = (req, res, next) => {
 
 module.exports.loginWithIDPCallback = (req, res, next) => {
   const { idp } = req.params;
+  console.log(idp)
   passport.authenticate(`${idp}-auth`, (error, user) => {
     if (error) {
-      next(error);
+      return next(error);
     } else {
       req.login(user, (error) => {
+        console.log(req.isAuthenticated())
         if(error) {
-          next(error)
+          return next(error)
         } else {
-          res.redirect('/users/list');
+          return res.redirect('/users');
         }
       })
     }
+  
   })(req, res, next);
 }
 

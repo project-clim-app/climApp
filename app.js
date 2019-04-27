@@ -67,11 +67,7 @@ app.use('/', miscRouter);
 app.use('/', authRouter);
 app.use('/users', usersRouter);
 
-app.get( '/authenticate/google', 
-   passport.authenticate( 'google', GoogleStrategy, { 
-     successRedirect: '/',
-     failureRedirect: '/login'
-}));
+
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 

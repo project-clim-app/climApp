@@ -74,6 +74,7 @@ function authenticateOAuthUser(accessToken, refreshToken, profile, next) {
   })
     .then(user => {
       if (user) {
+        console.log('User------------------', user)
         next(null, user);
       } else if (!user) {
         user = new User({

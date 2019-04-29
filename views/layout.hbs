@@ -18,21 +18,26 @@
 
 <script>
 $(document).ready(function(){
+  console.log('entra')
  $.ajaxSetup({ cache: false });
  $('#search').keyup(function(){
   $('#result').html('');
   $('#state').val('');
   var searchField = $('#search').val();
   var expression = new RegExp(searchField, "i");
-  $.getJSON('..data/aemet-locations.json', function(data) {
-   $.each(data, function(key, value){
-    if (value.name.search(expression) != -1 || value.location.search(expression) != -1)
-    {
-     $('#result').append(`<li class="list-group-item link-class">${aemet-locations.value}</span></li>`);
-    }
-   });   
+  if(searchField.length>=3 ){
+  console.log(expression)
+  $.getJSON('/search', function(data) {
+    const dataMod = (Object.keys(data)).map(city => ({name: city}))
+    const result =dataMod.filter(elem => elem.name.includes(searchField))
+    console.log(result[0].name);
+   
+     $('#result').append(`<li class="list-group-item link-class">${result[0].name}</span></li>`);
+  
+
   });
- });
+ }
+  });
  
  $('#result').on('click', 'li', function() {
   var click_text = $(this).text().split('|');

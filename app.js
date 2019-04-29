@@ -66,7 +66,7 @@ app.use((req, res, next) => {
 
 app.use('/', miscRouter);
 app.use('/', authRouter);
-app.use('/', searchRouter);
+app.use('/search', searchRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

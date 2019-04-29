@@ -2,6 +2,7 @@ const axios = require('axios');
 require('dotenv').config();
 const API_KEY = process.env.AEMET_API_KEY;
 const locationCodes = require('../data/aemet-locations.json');
+var _ = require('lodash');
 
 const http = axios.create({
   baseURL: 'https://opendata.aemet.es/opendata/api',
@@ -22,13 +23,17 @@ module.exports.getWeather = (location) => {
       }
     })
     .then(res => {
+      //  console.log(res.data)
       const data = res.data[0] || { prediccion: { dia: [] }};
       return data.prediccion.dia.map((info) => {
-        console.log(info)
-        return {
-          wind: info.viento,
-          date: new Date(info.fecha)
-        }
+        const cielo = info.estadoCielo.find(element => element.descripcion);
+        return console.log({
+          date: info.fecha,
+          lluvia: info.probPrecipitacion[0].value,
+          temperatura_max: info.temperatura.maxima,
+          temperatura_min: info.temperatura.minima,
+          estado_cielo: cielo.descripcion
+        })
       })
     })
 }

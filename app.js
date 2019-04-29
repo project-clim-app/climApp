@@ -11,7 +11,7 @@ const logger           = require('morgan');
 const path             = require('path');
 const bcrypt           = require('bcrypt');
 const passport         = require('passport');
-const GoogleStrategy   = require('passport-google-oauth2').Strategy;
+const locations = require('./data/aemet-locations.json')
 
 const session      = require('./config/session.config');
 
@@ -61,12 +61,19 @@ app.use(passport.session())
 app.use((req, res, next) => {
   res.locals.path = req.path;
   res.locals.session = req.user;
+  res.locals.locations = Object.keys(locations)
+    .map(name => { 
+      return { 
+        name: name, 
+        code: locations[name]
+      }
+  })
   next();
 })
 
 app.use('/', miscRouter);
 app.use('/', authRouter);
-app.use('/', searchRouter);
+app.use('/search', searchRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

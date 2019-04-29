@@ -13,15 +13,16 @@ const bcrypt           = require('bcrypt');
 const passport         = require('passport');
 const GoogleStrategy   = require('passport-google-oauth2').Strategy;
 
+const session      = require('./config/session.config');
 
 require('./config/db.config');
 require('./config/hbs.config');
-const session      = require('./config/session.config');
 require('./config/passport.config')
 
 const miscRouter = require('./routes/misc.routes');
 const authRouter = require('./routes/auth.routes');
 const usersRouter = require('./routes/users.routes');
+const searchRouter = require('./routes/search.routes');
 
 const app = express();
 
@@ -65,6 +66,7 @@ app.use((req, res, next) => {
 
 app.use('/', miscRouter);
 app.use('/', authRouter);
+app.use('/', searchRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

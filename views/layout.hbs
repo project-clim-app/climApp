@@ -21,7 +21,6 @@
 <script>
 
   $(document).ready(function () {
-    console.log('entra')
     $.ajaxSetup({ cache: false });
     $('#search').keyup(function () {
       $('#result').html('');
@@ -32,23 +31,10 @@
         console.log(expression)
         $.getJSON('/search', function (data) {
           const dataMod = (Object.keys(data)).map(city => ({ name: city }))
-
-
           const filtered = dataMod.filter(elem => elem.name.includes(searchField));
-
           filtered.forEach(elem => {
             $('#result').append(`<li class="list-group-item link-class">${elem.name}</span></li>`);
           })
-
-
-
-
-          //    var array1 = ['a', 'b', 'c'];
-
-          //array1.forEach(function(element) {
-          //  console.log(element);
-          //});
-
         });
       }
     });

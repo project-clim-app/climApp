@@ -12,8 +12,8 @@ const http = axios.create({
   }
 });
 
-module.exports.getWeather = (location) => {
-  const code = locationCodes[location];
+module.exports.getWeather = (location, asName = true) => {
+  const code = (asName) ? locationCodes[location] : location;
   return http.get(`/prediccion/especifica/municipio/diaria/${code}`)
     .then(res => {
       if (res.data.estado === 404) {
@@ -23,17 +23,19 @@ module.exports.getWeather = (location) => {
       }
     })
     .then(res => {
-      //  console.log(res.data)
+      console.log(res.data)
       const data = res.data[0] || { prediccion: { dia: [] }};
       return data.prediccion.dia.map((info) => {
         const cielo = info.estadoCielo.find(element => element.descripcion);
-        return console.log({
+        return {
           date: info.fecha,
-          lluvia: info.probPrecipitacion[0].value,
-          temperatura_max: info.temperatura.maxima,
-          temperatura_min: info.temperatura.minima,
-          estado_cielo: cielo.descripcion
-        })
+          rain: info.probPrecipitacion[0].value,
+          temp: {
+            max: info.temperatura.maxima,
+            min: info.temperatura.minima
+          },
+          sky: cielo.descripcion
+        }
       })
     })
 }

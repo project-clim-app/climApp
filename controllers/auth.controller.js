@@ -23,7 +23,7 @@ module.exports.doRegister = (req, res, next) => {
       } else {
         user = new User(req.body);
         return user.save()
-          .then(uuser => res.redirect('/login'))
+          .then(user => res.redirect('/login'))
       }
     })
     .catch(error => {
@@ -41,7 +41,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.loginWithIDPCallback = (req, res, next) => {
   const { idp } = req.params;
-  console.log(idp)
+  // console.log(idp)
   passport.authenticate(`${idp}-auth`, (error, user) => {
     if (error) {
       return next(error);

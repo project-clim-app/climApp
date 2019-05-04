@@ -1,0 +1,13 @@
+{{locationName location}}
+{{#each weather as | day |}}
+<h4>{{day.date}}</h4>
+<p>Probabilidad de lluvia: {{day.rain}}%</p>
+<p>Estado del cielo: {{day.sky}}</p>
+<p>Temperatura entre {{day.temp.max}} y {{day.temp.min}}</p>
+{{/each}}
+
+{{!-- 
+captar la localización del usuario
+res.body.ubicacion localización del municipio del usuario
+la busqueda en API de AEMET
+y devolvemos la prección de los 7 días siguientes --}}  

@@ -8,4 +8,6 @@ router.get('/', secure.isAuthenticated, users.list);
 
 // router.post('/:id/delete', secure.isAuthenticated, secure.checkRole('admin'), users.delete);
 
+// router.post('/userOptions', secure.isAuthenticated, user.myforecast);
+
 module.exports = router;

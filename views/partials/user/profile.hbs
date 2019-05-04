@@ -24,7 +24,7 @@
       <div class="input-group-text"><i class="fas fa-map-marker-alt"></i></div>
     </div>
 
-    <select name="location" class="form-control" name="search" id="search">
+    <select name="location" class="form-control" name="search" id="search" placeholder="Select your location">
       {{!-- <option value="" class="form-control" disabled selected>Select your location</option> --}}
       {{#each locations as |location|}}
       <option value="{{location.code}}" class="form-control">{{location.name}}</option>
@@ -36,14 +36,15 @@
       {{ errors.email }}
     </div>
   </div>
-  <div class="input-group mb-2">
+  {{!-- <div class="input-group mb-2">
     <div class="input-group-prepend">
       <div class="input-group-text"><i class="fas fa-lock"></i></div>
-    </div>
-    <input type="password" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}"
+    </div> --}}
+    {{!-- <input type="password" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}"
       placeholder="Password" />
     <div class="invalid-feedback">
       {{ errors.password }}
     </div>
-  </div>
+  </div> --}}
+  
 </div>

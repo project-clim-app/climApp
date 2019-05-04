@@ -1,4 +1,5 @@
 const hbs = require('hbs');
+const locations = require('../data/aemet-locations.json');
 
 hbs.registerHelper('isActive', (path, exp, exact, options) => {
   if (exact) {
@@ -11,4 +12,8 @@ hbs.registerHelper('isActive', (path, exp, exact, options) => {
     }
   }
   return options.inverse(this);
+})
+
+hbs.registerHelper('locationName', (code) => {
+  return Object.keys(locations).find(name => locations[name] == code) 
 })

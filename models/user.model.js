@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
   location: {
     type: String,
     // enum: ['../data/aemet-locations.json'],
-    default: 'guess'
+    //default: 'guess'
   },
   social: {
     googleId: {

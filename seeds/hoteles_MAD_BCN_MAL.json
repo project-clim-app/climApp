@@ -8,7 +8,7 @@
     "short_name": "Calle de Barcelona",
     "types": ["route"]
   }, {
-    "long_name": "Madrid",
+    "long_name": "  ",
     "short_name": "Madrid",
     "types": ["locality", "political"]
   }, {
@@ -90,7 +90,7 @@
     "time": 1491832147
   }],
   "scope": "GOOGLE",
-  "types": ["lodging", "point_of_interest", "establishment"],
+    
   "url": "https://maps.google.com/?cid=12597160132273212323",
   "user_ratings_total": 4,
   "utc_offset": 120,

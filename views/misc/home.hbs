@@ -2,7 +2,28 @@
   <div class="jumbotron jumbotron-fluid">
     <h1 class="display-4">ClimApp</h1>
     <p class="lead"></p>
+    <form action="/userSearch" method="POST">
+      <p>Date: <input type="text" id="datepicker" name="day"></p>
 
-    {{>user/forecast weather=weather location=location}}
+      <select type="text" id="rainSearch" name="rainSearch">
+        <option value="" disabled selected>Selecciona probabilidad de lluvia</option>
+        <option value="0">Sin lluvia</option>
+        <option value="11">Lluvia moderada</option>
+        <option value="51">Lluvia intensa</option>
+        <option value="81">Terremoto</option>
+      </select>
+
+      {{>user/forecast weather=weather location=location}}
+
+      <select name="completeSearch" id="">
+        <option value="Hotel">Hotel</option>
+        <option value="Casa rural">Casa rural</option>
+        <option value="Multiaventura">Multiaventura</option>
+        <option value="Padel">Padel</option>
+        <option value="Rutas senderismo">Rutas senderismo</option>
+      </select>
+
+      <input type="submit" class="btn btn-info">
+    </form>
   </div>
 </div>

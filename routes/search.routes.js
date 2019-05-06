@@ -9,6 +9,7 @@ const search = require('../controllers/search.controller');
 
 router.get('/', secure.isAuthenticated, search.oneSearch);
 
+
 // router.post('/:id/delete', secure.isAuthenticated, secure.checkRole('admin'), users.delete);
 
 module.exports = router;

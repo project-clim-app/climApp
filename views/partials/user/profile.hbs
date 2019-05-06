@@ -30,6 +30,12 @@
       <option value="{{location.code}}" class="form-control">{{location.name}}</option>
       {{/each}}
     </select>
+    <br><br>
+    <select class="form-control" name="userPreferences">
+      <option value="low cost"> Low cost</option>
+      <option value="smart" checked> Smart</option>
+      <option value="luxe"> Lujo</option>
+    </select>
     {{!-- <input type="select" name="location" class="form-control {{#if errors.email}} is-invalid {{/if}}" placeholder="Email"
       value="{{ user.email }}" {{#if edit }}readonly{{/if}}/> --}}
     <div class="invalid-feedback">
@@ -40,11 +46,11 @@
     <div class="input-group-prepend">
       <div class="input-group-text"><i class="fas fa-lock"></i></div>
     </div> --}}
-    {{!-- <input type="password" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}"
+  {{!-- <input type="password" name="password" class="form-control {{#if errors.password}} is-invalid {{/if}}"
       placeholder="Password" />
     <div class="invalid-feedback">
       {{ errors.password }}
     </div>
   </div> --}}
-  
+
 </div>

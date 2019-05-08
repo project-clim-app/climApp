@@ -22,41 +22,13 @@
 
 </body>
 
-{{!-- <script>
-
-  $(document).ready(function () {
-    $.ajaxSetup({ cache: false });
-    $('#search').keyup(function () {
-      $('#result').html('');
-      $('#state').val('');
-      var searchField = $('#search').val();
-      var expression = new RegExp(searchField, "i");
-      if (searchField.length >= 3) {
-        console.log(expression)
-        $.getJSON('/search', function (data) {
-          const dataMod = (Object.keys(data)).map(city => ({ name: city }))
-          const filtered = dataMod.filter(elem => elem.name.includes(searchField));
-          filtered.forEach(elem => {
-            $('#result').append(`<li class="list-group-item link-class">${elem.name}</span></li>`);
-          })
-        });
-      }
-    });
-
-    $('#result').on('click', 'li', function () {
-      var click_text = $(this).text().split('|');
-      $('#search').val($.trim(click_text[0]));
-      $("#result").html('');
-    });
-  });
-
-
-</script> --}}
-
 <script>
   $( function() {
     $( "#datepicker" ).datepicker();
   } );
+  setInterval(function(){
+    getWeatherDaily()
+  }),1000*60*60*24)
 </script>
 
 </html>

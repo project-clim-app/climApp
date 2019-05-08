@@ -23,11 +23,12 @@ module.exports.getWeather = (location, asName = true) => {
       }
     })
     .then(res => {
-      console.log(res.data)
       const data = res.data[0] || { prediccion: { dia: [] }};
       return data.prediccion.dia.map((info) => {
         const cielo = info.estadoCielo.find(element => element.descripcion);
+
         return {
+          name: data.nombre,
           date: info.fecha,
           rain: info.probPrecipitacion[0].value,
           temp: {
@@ -40,9 +41,9 @@ module.exports.getWeather = (location, asName = true) => {
     })
 }
 
-module.exports.getWeather = (location, asName = true) => {
+module.exports.getWeekWeather = (location, asName = true) => {
   const code = (asName) ? locationCodes[location] : location;
-  
+
   return http.get(`/prediccion/especifica/municipio/diaria/${code}`)
     .then(res => {
       if (res.data.estado === 404) {

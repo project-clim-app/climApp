@@ -42,34 +42,34 @@ module.exports.CompleteSearch = (req, res, next) => {
     "prevision.rain": rain
   }
 
-  Clime.find( mongoQuery )
-  .then(result => {
-    const locations = result.map(x=> x.locationName)
+  Clime.find(mongoQuery)
+    .then(result => {
+      const locations = result.map(x => x.locationName)
 
-    result.forEach(clime => {
-      clime.prevision = clime.prevision.filter(p =>{
-        return Number(rain) === p.rain && new Date(day).toDateString() === p.day.toDateString()
+      result.forEach(clime => {
+        clime.prevision = clime.prevision.filter(p => {
+          return Number(rain) === p.rain && new Date(day).toDateString() === p.day.toDateString()
+        })
       })
-    })
 
-    const previsions = result.map(r => r.prevision).reduce((acc, el) =>{
-      return [ ...acc, ...el]
-    }, [])
+      const previsions = result.map(r => r.prevision).reduce((acc, el) => {
+        return [...acc, ...el]
+      }, [])
 
 
-    Places.find({ location: { "$in": locations }})
-      .then(places => {
+      Places.find({ location: { "$in": locations } })
+        .then(places => {
 
-        const result = places.map(p => {
-          return {
-            ...p.toJSON(),
-            prevision: previsions.filter(pre => pre.locationName === p.location)
-          }
+          const result = places.map(p => {
+            return {
+              ...p.toJSON(),
+              prevision: previsions.filter(pre => pre.locationName === p.location)
+            }
+          })
+
+          res.json(result)
         })
 
-        res.json(result)
-      })
-
-  })
-  .catch(err => {res.json(err)})
+    })
+    .catch(err => { res.json(err) })
 }

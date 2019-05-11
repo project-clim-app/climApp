@@ -12,18 +12,21 @@ Clime.deleteMany()
     codes.forEach((code, i) => {
       setTimeout(() => {
         saveLoc(code)
-      }, i * 10000)
+      }, i * 4000)
     })
   })
 
 function saveLoc(loc) {
   service.getWeather(loc, false)
     .then(response => {    
+      console.log(response)
       const clime = new Clime({
         locationCode: loc,
         locationName: response[0].name,
         prevision: response.map(el => {
           return {
+            locationCode: loc,
+            locationName: response[0].name,
             day: el.date,
             rain: el.rain,
             sky: el.sky,

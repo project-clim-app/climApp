@@ -4,6 +4,8 @@ const climeSchema = new mongoose.Schema({
   locationCode: Number,
   locationName: String,
   prevision: [{
+    locationCode: Number,
+    locationName: String,
     day: Date,
     rain: Number,
     sky: String,

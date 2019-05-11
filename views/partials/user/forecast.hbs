@@ -1,0 +1,32 @@
+
+<div class="card paco">
+        {{#switch sky}} 
+            {{#case 'Poco nuboso'}} <img class="card-img-top" src="./images/cloudy.png"> {{/case}}
+            {{#case 'Nuboso'}} <img class="card-img-top" src="./images/cloudy.png"> {{/case}}
+            {{#case 'Muy nuboso con lluvia escasa'}} <img class="card-img-top" src="./images/rain_sun.png"> {{/case}}
+            {{#case 'Intervalos nubosos'}} <img class="card-img-top" src="./images/cloudy.png"> {{/case}}
+            {{#case 'Muy nuboso'}} <img class="card-img-top" src="./images/clouds.png"> {{/case}}
+            {{#case 'Nuboso con lluvia escasa'}} <img class="card-img-top" src="./images/rain_sun.png"> {{/case}}
+            {{#case 'Cubierto con lluvia'}} <img class="card-img-top" src="./images/rain.png"> {{/case}}
+            {{#case 'Despejado'}} <img class="card-img-top" src="./images/sun.png"> {{/case}}
+            {{#case 'Nubes altas'}} <img class="card-img-top" src="./images/clouds.png"> {{/case}}
+        {{/switch}}
+    <div class="card-body">
+        <p class="card-title"><b>{{date}}</b></p>
+        <p class="card-text">
+            <p><b>{{rain}}%</b> lluvia</p>
+            <p><b>{{sky}}</b></p>
+            <p><b>{{temp.min}}ºC</b> y <b>{{temp.max}}ºC</b></p>
+        </p>
+        {{!-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+        
+    </div>
+    {{!-- {{/each}} --}}
+</div>
+
+
+{{!-- 
+captar la localización del usuario
+res.body.ubicacion localización del municipio del usuario
+la busqueda en API de AEMET
+y devolvemos la prección de los 7 días siguientes --}}

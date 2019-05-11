@@ -25,10 +25,14 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Password is required'],
     minlength: [8, 'Password needs at last 8 chars']
   },
+  userPreferences: {
+    type: String,
+    enum: ['low cost', 'smart', 'luxe']
+  },
   location: {
     type: String,
     // enum: ['../data/aemet-locations.json'],
-    default: 'guess'
+    //default: 'guess'
   },
   social: {
     googleId: {

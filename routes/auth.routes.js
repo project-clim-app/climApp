@@ -14,6 +14,8 @@ router.get('/profile', secure.isAuthenticated, auth.profile);
 router.post('/profile', storage.single('avatar'), auth.doProfile);
 router.post('/profile', secure.isAuthenticated, storage.single('avatar'), auth.doProfile);
 
+// router.post('/profile', secure.isAuthenticated, auth.update)
+
 
 router.get('/authenticate/google', passport.authenticate('google-auth', { scope: ['openid', 'profile', 'email'] }))
 // router.get('/authenticate/facebook', passport.authenticate('facebook-auth', { scope: ['email']}))

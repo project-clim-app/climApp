@@ -1,0 +1,99 @@
+[{
+  "address_components": [{
+    "long_name": "4",
+    "short_name": "4",
+    "types": ["street_number"]
+  }, {
+    "long_name": "Calle de Barcelona",
+    "short_name": "Calle de Barcelona",
+    "types": ["route"]
+  }, {
+    "long_name": "  ",
+    "short_name": "Madrid",
+    "types": ["locality", "political"]
+  }, {
+    "long_name": "Madrid",
+    "short_name": "M",
+    "types": ["administrative_area_level_2", "political"]
+  }, {
+    "long_name": "Comunidad de Madrid",
+    "short_name": "Comunidad de Madrid",
+    "types": ["administrative_area_level_1", "political"]
+  }, {
+    "long_name": "Spain",
+    "short_name": "ES",
+    "types": ["country", "political"]
+  }, {
+    "long_name": "28012",
+    "short_name": "28012",
+    "types": ["postal_code"]
+  }],
+  "adr_address": "<span class=\"street-address\">Calle de Barcelona, 4</span>, <span class=\"postal-code\">28012</span> <span class=\"locality\">Madrid</span>, <span class=\"country-name\">Spain</span>",
+  "formatted_address": "Calle de Barcelona, 4, 28012 Madrid, Spain",
+  "geometry": {
+    "location": {
+      "lat": 40.4155713,
+      "lng": -3.7026884
+    },
+    "viewport": {
+      "northeast": {
+        "lat": 40.4169215302915,
+        "lng": -3.701290469708498
+      },
+      "southwest": {
+        "lat": 40.4142235697085,
+        "lng": -3.703988430291503
+      }
+    }
+  },
+  "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+  "id": "945692f806198d32a5f980e0fb6340fe699feca9",
+  "name": "Hotel barato en madrid",
+  "place_id": "ChIJHUTkgIAoQg0Ro4vbzmUa0q4",
+  "plus_code": {
+    "compound_code": "C78W+6W Madrid, Spain",
+    "global_code": "8CGRC78W+6W"
+  },
+  "rating": 4.5,
+  "reference": "ChIJHUTkgIAoQg0Ro4vbzmUa0q4",
+  "reviews": [{
+    "author_name": "Mouna El Attar",
+    "author_url": "https://www.google.com/maps/contrib/113366949929432614409/reviews",
+    "profile_photo_url": "https://lh4.googleusercontent.com/-6ZGcoPj0kdc/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rcpxJ6TLG47xOKQ2U1lgkud7MTUgA/s128-c0x00000000-cc-rp-mo/photo.jpg",
+    "rating": 5,
+    "relative_time_description": "4 months ago",
+    "text": "",
+    "time": 1544144603
+  }, {
+    "author_name": "Alhanna ahijirasouliha",
+    "author_url": "https://www.google.com/maps/contrib/103360187430205619406/reviews",
+    "profile_photo_url": "https://lh5.googleusercontent.com/-6RIyefRpKFk/AAAAAAAAAAI/AAAAAAAACDI/0t9AejrtG6g/s128-c0x00000000-cc-rp-mo-ba3/photo.jpg",
+    "rating": 4,
+    "relative_time_description": "a year ago",
+    "text": "",
+    "time": 1523610587
+  }, {
+    "author_name": "Chema Rodrigo",
+    "author_url": "https://www.google.com/maps/contrib/107126930401033059114/reviews",
+    "profile_photo_url": "https://lh4.googleusercontent.com/-q5_nEPaSHMg/AAAAAAAAAAI/AAAAAAAAAAs/6ZYL0VA8-XU/s128-c0x00000000-cc-rp-mo-ba2/photo.jpg",
+    "rating": 4,
+    "relative_time_description": "2 years ago",
+    "text": "",
+    "time": 1491832208
+  }, {
+    "author_name": "Importación Blogger",
+    "author_url": "https://www.google.com/maps/contrib/110374767459978622367/reviews",
+    "profile_photo_url": "https://lh4.googleusercontent.com/-u-78qS6LptA/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rfwPAcPvhCzwphQ3tCXuFEHL7Nn0Q/s128-c0x00000000-cc-rp-mo-ba2/photo.jpg",
+    "rating": 5,
+    "relative_time_description": "2 years ago",
+    "text": "",
+    "time": 1491832147
+  }],
+  "scope": "GOOGLE",
+    
+  "url": "https://maps.google.com/?cid=12597160132273212323",
+  "user_ratings_total": 4,
+  "utc_offset": 120,
+  "vicinity": "Calle de Barcelona, 4, Madrid"
+}
+]

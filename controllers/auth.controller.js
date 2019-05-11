@@ -1,6 +1,6 @@
-const mongoose         = require('mongoose');
-const User             = require('../models/user.model');
-const passport         = require('passport');
+const mongoose = require('mongoose');
+const User = require('../models/user.model');
+const passport = require('passport');
 
 
 module.exports.register = (req, res, next) => {
@@ -16,14 +16,19 @@ module.exports.doRegister = (req, res, next) => {
     })
   }
 
-  User.findOne({ email: req.body.email })
+  User.findOne({
+      email: req.body.email
+    })
+
     .then(user => {
       if (user) {
-        renderWithErrors({ email: 'Email already registered'})
+        renderWithErrors({
+          email: 'Email already registered'
+        })
       } else {
         user = new User(req.body);
         return user.save()
-          .then(uuser => res.redirect('/login'))
+          .then(user => res.redirect('/login'))
       }
     })
     .catch(error => {
@@ -40,22 +45,24 @@ module.exports.login = (req, res, next) => {
 }
 
 module.exports.loginWithIDPCallback = (req, res, next) => {
-  const { idp } = req.params;
-  console.log(idp)
+  const {
+    idp
+  } = req.params;
+  // console.log(idp)
   passport.authenticate(`${idp}-auth`, (error, user) => {
     if (error) {
       return next(error);
     } else {
       req.login(user, (error) => {
         console.log(req.isAuthenticated())
-        if(error) {
+        if (error) {
           return next(error)
         } else {
           return res.redirect('/profile');
         }
       })
     }
-  
+
   })(req, res, next);
 }
 
@@ -64,7 +71,7 @@ module.exports.profile = (req, res, next) => {
 }
 
 module.exports.doProfile = (req, res, next) => {
-  if(!req.body.password) {
+  if (!req.body.password) {
     delete req.body.password;
   }
 
@@ -87,6 +94,43 @@ module.exports.doProfile = (req, res, next) => {
       }
     });
 }
+
+// module.exports.update = (req, res, next) => {
+//   User.findOneAndUpdate({
+//       email: req.body.email
+//     })
+
+//     .then(user => {
+//       if (user) {
+//         renderWithErrors({
+//           email: 'Email already registered'
+//         })
+//       } else {
+//         const user = req.user;
+//         Object.assign(user, req.body);
+//         user.save()
+//           .then(user => res.redirect('/profile'))
+//           .catch(error => {
+//             if (error instanceof mongoose.Error.ValidationError) {
+//               res.render('auth/profile', {
+//                 user: req.body,
+//                 errors: error.errors
+//               })
+//             } else {
+//               next(error);
+//             }
+//           });
+//       }
+//     })
+//     .catch(error => {
+//       if (error instanceof mongoose.Error.ValidationError) {
+//         renderWithErrors(error.errors)
+//       } else {
+//         next(error);
+//       }
+//     });
+// }
+
 
 module.exports.logout = (req, res, next) => {
   req.logout();

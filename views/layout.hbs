@@ -5,6 +5,7 @@
   <title>ClimApp</title>
   {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> --}}
   <script src="/javascripts/jquerymin.js"></script>
+  <script src="/javascripts/jquery-ui.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -15,39 +16,22 @@
 
 <body>
   {{>navbar }}
-  {{{ body }}}
+  <div class="content">
+    {{{ body }}}
+  </div>
+
+  {{>footer}}
+
 </body>
 
 <script>
-
-  $(document).ready(function () {
-    $.ajaxSetup({ cache: false });
-    $('#search').keyup(function () {
-      $('#result').html('');
-      $('#state').val('');
-      var searchField = $('#search').val();
-      var expression = new RegExp(searchField, "i");
-      if (searchField.length >= 3) {
-        console.log(expression)
-        $.getJSON('/search', function (data) {
-          const dataMod = (Object.keys(data)).map(city => ({ name: city }))
-          const filtered = dataMod.filter(elem => elem.name.includes(searchField));
-          filtered.forEach(elem => {
-            $('#result').append(`<li class="list-group-item link-class">${elem.name}</span></li>`);
-          })
-        });
-      }
-    });
-
-    $('#result').on('click', 'li', function () {
-      var click_text = $(this).text().split('|');
-      $('#search').val($.trim(click_text[0]));
-      $("#result").html('');
-    });
+  $(function () {
+    $("#datepicker").datepicker();
   });
 
-
+  /*setInterval(function(){
+    getWeatherDaily()
+  }),(1000*60*60*24);*/
 </script>
-
 
 </html>

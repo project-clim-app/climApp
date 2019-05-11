@@ -13,7 +13,12 @@ body{
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+  text-decoration: none !important;
+}
+
+a:hover{
+  color: rgb(20, 167, 57);
 }
 
 .navbar{
@@ -35,7 +40,7 @@ a {
   background-color:#f1f1f1;
  }
 
- .paco{
+ .forecast{
   flex: 0 0 12%;
   padding: 0.2rem;
   box-sizing: border-box;
@@ -51,6 +56,15 @@ a {
   padding: 0.5rem;
 }
 
+.results{
+  flex: 0 0 25%;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 1px 0px rgb(126, 126, 126);   
+  border-radius: 5px;
+  margin: 2rem 0.2rem 2rem 0.2rem;
+}
+
 .titulo{
   display: flex;
   flex-wrap: wrap;
@@ -58,7 +72,7 @@ a {
   text-align: center;
 }
 
-.paco2{
+.search{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

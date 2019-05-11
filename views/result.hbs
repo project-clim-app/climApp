@@ -1,0 +1,8 @@
+{{!-- <div>
+<h1>Estos son los lugares que has elegido para el día {{result.0.prevision.0.day}}, con una probabilidad de lluvia del {{result.0.prevision.0.rain}}%</h1> 
+</div> --}}
+<div class="search">
+{{#each result as | res|}}  
+  {{>user/results}}
+{{/each}}
+</div>

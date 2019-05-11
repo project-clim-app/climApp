@@ -1,0 +1,21 @@
+<div class="card results">
+    <div class="card-body">
+        <a href="{{googlePlaceLink}}">
+        <p class="card-title"><b><h2>{{name}}</h2></b></p>
+
+        <p class="card-text">
+            <p>{{location}}</p>
+            </p>{{rating}} {{#switch rating}}
+            {{#case '3.1'}}<i class="fas fa-star"></i> {{/case}}
+            {{#case '4'}} <i class="fas fa-star"></i><i class="fas fa-star"></i> {{/case}}
+            {{#case 'luxe'}}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> {{/case}}
+        {{/switch}} 
+        </p>
+            <p>{{activity}}</p>
+            <p>{{prevision.0.rain}}</p>
+            <p>{{prevision.0.sky}}</p>
+            <p>{{prevision.0.temp.max}}</p>
+            <p>{{prevision.0.temp.min}}</p></a>
+        </p>
+    </div>
+</div>

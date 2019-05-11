@@ -16,19 +16,22 @@
 
 <body>
   {{>navbar }}
-  {{{ body }}}
+  <div class="content">
+    {{{ body }}}
+  </div>
 
-
+  {{>footer}}
 
 </body>
 
 <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  setInterval(function(){
+  $(function () {
+    $("#datepicker").datepicker();
+  });
+
+  /*setInterval(function(){
     getWeatherDaily()
-  }),1000*60*60*24)
+  }),(1000*60*60*24);*/
 </script>
 
 </html>

@@ -4,8 +4,11 @@ const climeSchema = new mongoose.Schema({
   locationCode: Number,
   locationName: String,
   prevision: [{
+<<<<<<< HEAD
     locationCode: Number,
     locationName: String,
+=======
+>>>>>>> cambios esteticos
     day: Date,
     rain: Number,
     sky: String,

@@ -70,6 +70,11 @@ a:hover{
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
+  margin: 1rem;
+}
+
+ul, li {
+  list-style: none;
 }
 
 .search{
@@ -84,6 +89,7 @@ a:hover{
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
  .jumbotron{

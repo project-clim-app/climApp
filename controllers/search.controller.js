@@ -12,7 +12,8 @@ module.exports.search = (req, res, next) => {
 }
 module.exports.oneSearch = (req, res, next) => {
   const location = req.user.location
-  weatherService.getWeather(location, false)
+  // res.json(req.user)
+  weatherService.getWeather(location, true)
     .then(weather => {
       res.render('search', { weather, location })
     })
@@ -20,20 +21,18 @@ module.exports.oneSearch = (req, res, next) => {
 }
 
 module.exports.CompleteSearch = (req, res, next) => {
-  const { request, day, rainSearch: rain } = req.body;
+  const { request, day, rainSearch, completeSearch } = req.body;
 console.log(req.user)
-  const mongoQuery = {
-    "prevision.day": day,
-    "prevision.rain": rain
-  }
-
-  Clime.find( mongoQuery )
+  
+  Clime.find()
   .then(result => {
     const locations = result.map(x=> x.locationName)
 
     result.forEach(clime => {
       clime.prevision = clime.prevision.filter(p =>{
-        return Number(rain) === p.rain && new Date(day).toDateString() === p.day.toDateString()
+ 
+        return (Number(rainSearch) === p.rain) && (new Date(day).toDateString() === p.day.toDateString())
+     
       })
     })
 
@@ -51,9 +50,9 @@ console.log(req.user)
 
             prevision: previsions.filter(pre => pre.locationName === p.location)
           }
-        }).filter(place => req.user.userPreferences==place.levelPrice)
+        }).filter(place => (req.user.userPreferences==place.levelPrice && completeSearch == place.activity))
         // res.json(result)
-        res.render('result', {result})
+        res.render('result', {result, day})
       })
 
   })

@@ -9,4 +9,4 @@ router.get('/', secure.isAuthenticated, misc.home);
 router.get('/', misc.home);
 router.post('/userSearch', secure.isAuthenticated, search.CompleteSearch)
 
-module.exports = router;
+module.exports = router;  

@@ -1,8 +1,9 @@
 {{!-- <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p> --}}
-{{!-- <div class="titulo">
+<div class="titulo">
     <h2>{{weather.0.name}}</h2>
-</div> --}}
+</div>
+<p><a href="/" class="btn btn-primary"> Elige tu actividad</a></p>
 <div class="search">
     {{#each weather as | day |}}
     {{> user/forecast}}

@@ -1,17 +1,18 @@
 <div class="container">
   <div class="jumbotron jumbotron-fluid">
-    <h1 class="display-4">ClimApp</h1>
+    <h1 class="display-4">Selecciona tu actividad</h1>
     <p class="lead"></p>
-    {{>user/forecast weather=weather location=location}}
+    {{!-- {{>user/forecast weather=weather location=location}} --}}
     <form action="/userSearch" method="POST">
-      <p>Date: <input type="text" id="datepicker" name="day" autocomplete="off"></p>
+   
+      <p>Date: <input type="text" id="datepicker" name="day" autocomplete="off" placeholder="YYYY/MM/DD"></p>
 
       <select type="text" id="rainSearch" name="rainSearch">
-        <option value="" disabled selected>Selecciona probabilidad de lluvia</option>
+        <option value="" disabled selected> Selecciona probabilidad de lluvia</option>
         <option value="0">Sin lluvia</option>
-        <option value="11">Lluvia moderada</option>
-        <option value="51">Lluvia intensa</option>
-        <option value="81">Terremoto</option>
+        <option value="1">Lluvia moderada</option>
+        <option value="2">Lluvia intensa</option>
+        <option value="3">Terremoto</option>
       </select>
 
       <select name="completeSearch" id="">

@@ -8,12 +8,13 @@
       {{/if}}
       <form action="/profile" method="POST" enctype="multipart/form-data">
         {{>user/profile user=session errors=errors edit=true}}
-        <div class="form-group">
-          <div class="custom-file">
+        {{!-- <div class="form-group">
+           <div class="custom-file">
             <input type="file" class="custom-file-input" name="avatar" id="avatar">
             <label class="custom-file-label" for="avatar">Choose avatar</label>
-          </div>
-        </div>
+          </div> 
+
+        </div> --}}
         <div class="form-actions">
           <button type="submit" class="btn btn-success btn-block">Save changes</button>
         </div>

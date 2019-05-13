@@ -7,7 +7,7 @@
 
       <p>Date: <input type="text" id="datepicker" name="day" autocomplete="off" placeholder="YYYY/MM/DD"></p>
 
-      <select type="text" id="rainSearch" name="rainSearch">
+      <select class="select-style" type="text" id="rainSearch" name="rainSearch">
         <option value="" disabled selected> Selecciona probabilidad de lluvia</option>
         <option value="0">Sin lluvia</option>
         <option value="1">Lluvia moderada</option>
@@ -15,7 +15,7 @@
         <option value="3">Terremoto</option>
       </select>
 
-      <select name="completeSearch" id="">
+      <select class="select-style" name="completeSearch" id="">
         <option value="Hotel">Hotel</option>
         <option value="Casa rural">Casa rural</option>
         <option value="Multiaventura">Multiaventura</option>
@@ -28,9 +28,11 @@
   </div>
 </div>
 <div>
-  <h2>Aquí tienes algunas ideas!</h2>
+  <div class="titulo">
+    <h2>Aquí tienes algunas ideas!</h2>
+  </div>
 
-  <div class="results">
+  <div class="search">
     <div class="card results defined">
       <div class="card-body">
         <p class="card-title"><b>
@@ -42,13 +44,15 @@
 
             <p>Date: <input type="text" id="datepicker" name="day" autocomplete="on" placeholder="YYYY/MM/DD"></p>
 
-            <select type="text" id="rainSearch" name="rainSearch">
-              <option value="0" selected>Sin lluvia</option>
-            </select>
+        
+              <select type="text" id="rainSearch" name="rainSearch">
+                <option value="0" selected>Sin lluvia</option>
+              </select>
 
-            <select name="completeSearch" id="">
-              <option value="Padel" selected>Padel</option>
-            </select>
+              <select name="completeSearch" id="">
+                <option value="Padel" selected>Padel</option>
+              </select>
+           
 
             <button type="submit" class="boton btn btn-success">me encanta!</button>
           </form>
@@ -65,13 +69,14 @@
 
             <p>Date: <input type="text" id="datepicker" name="day" autocomplete="on" placeholder="YYYY/MM/DD"></p>
 
-            <select type="text" id="rainSearch" name="rainSearch">
-              <option value="0" selected>Sin lluvia</option>
-            </select>
-            <select name="completeSearch" id="">
-              <option value="Casa rural" selected>Casa rural</option>
-            </select>
-
+      
+              <select type="text" id="rainSearch" name="rainSearch">
+                <option value="0" selected>Sin lluvia</option>
+              </select>
+              <select name="completeSearch" id="">
+                <option value="Casa rural" selected>Casa rural</option>
+              </select>
+      
             <button type="submit" class="boton btn btn-success">me encanta!</button>
           </form>
       </div>
@@ -89,13 +94,13 @@
 
             <p>Date: <input type="text" id="datepicker" name="day" autocomplete="on" placeholder="YYYY/MM/DD"></p>
 
-            <select type="text" id="rainSearch" name="rainSearch">
-              <option value="0" selected>Sin lluvia</option>
-            </select>
-            <select name="completeSearch" id="">
-              <option value="Multiaventura" selected>Multiavenntura</option>
-            </select>
-
+              <select type="text" id="rainSearch" name="rainSearch">
+                <option value="0" selected>Sin lluvia</option>
+              </select>
+              <select name="completeSearch" id="">
+                <option value="Multiaventura" selected>Multiavenntura</option>
+              </select>
+ 
             <button type="submit" class="boton btn btn-success">me encanta!</button>
           </form>
       </div>

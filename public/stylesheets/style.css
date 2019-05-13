@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #F7F9F9;
   display: flex;
   flex-direction: column;
@@ -13,6 +14,15 @@ a {
 
 a:hover {
   color: #14a739; }
+
+.fa-star {
+  color: yellow; }
+
+.fa-tint {
+  color: blue; }
+
+.fa-building {
+  color: gray; }
 
 .navbar {
   background-color: #1DB954;
@@ -29,7 +39,7 @@ a:hover {
   border-radius: 5px;
   margin: 2rem 0.2rem 2rem 0.2rem; }
 
-.paco img {
+.forecast img {
   height: 10rem;
   display: block;
   margin: 0 auto 1rem;
@@ -72,7 +82,31 @@ ul, li {
   margin: 0 auto 1rem;
   padding: 0.5rem; }
 
+.select-style {
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fafafa url("img/icon-select.png") no-repeat 90% 50%; }
+
+.select-style select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none; }
+
+.select-style select:focus {
+  outline: none; }
+
 .boton {
+  margin-top: 1rem;
+  color: #fff !important; }
+
+.boton a {
   color: #fff !important; }
 
 .defined {

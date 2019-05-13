@@ -1,9 +1,7 @@
-// body {
-//   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-// }
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #F7F9F9;
   display: flex;
   flex-direction: column;
@@ -19,6 +17,18 @@ a {
 
 a:hover{
   color: rgb(20, 167, 57);
+}
+
+.fa-star{
+  color: yellow;
+}
+
+.fa-tint{
+  color: blue;
+}
+
+.fa-building{
+  color: gray;
 }
 
 .navbar{
@@ -39,7 +49,11 @@ a:hover{
   margin: 2rem 0.2rem 2rem 0.2rem;
 }
 
-.paco img{
+// .body_card{
+//   margin: 1rem;
+// }
+
+.forecast img{
   height: 10rem;
   display: block;
   margin: 0 auto 1rem;
@@ -88,11 +102,40 @@ ul, li {
   display: block;
   margin: 0 auto 1rem;
   padding: 0.5rem;
-
 }
+
+.select-style {
+  border: 1px solid #ccc;
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+.select-style select {
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+}
+
+.select-style select:focus {
+  outline: none;
+}
+
 .boton {
+  margin-top: 1rem;
   color: #fff !important;
 }
+
+.boton a{
+  color: #fff !important;
+}
+
 .defined {
   display: flex;
   flex-wrap: nowrap;

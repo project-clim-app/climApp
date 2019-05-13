@@ -4,7 +4,7 @@
     <p class="lead"></p>
     {{!-- {{>user/forecast weather=weather location=location}} --}}
     <form action="/userSearch" method="POST">
-   
+
       <p>Date: <input type="text" id="datepicker" name="day" autocomplete="off" placeholder="YYYY/MM/DD"></p>
 
       <select type="text" id="rainSearch" name="rainSearch">
@@ -25,5 +25,81 @@
 
       <input type="submit" class="btn btn-info">
     </form>
+  </div>
+</div>
+<div>
+  <h2>Aquí tienes algunas ideas!</h2>
+
+  <div class="results">
+    <div class="card results defined">
+      <div class="card-body">
+        <p class="card-title"><b>
+            <h4>Día de Padel </h4>
+          </b></p>
+
+        <p class="card-text">
+          <form action="/userSearch" method="POST">
+
+            <p>Date: <input type="text" id="datepicker" name="day" autocomplete="on" placeholder="YYYY/MM/DD"></p>
+
+            <select type="text" id="rainSearch" name="rainSearch">
+              <option value="0" selected>Sin lluvia</option>
+            </select>
+
+            <select name="completeSearch" id="">
+              <option value="Padel" selected>Padel</option>
+            </select>
+
+            <button type="submit" class="boton btn btn-success">me encanta!</button>
+          </form>
+      </div>
+    </div>
+    <div class="card results defined">
+      <div class="card-body">
+        <p class="card-title"><b>
+            <h4>Casa rural</h4>
+          </b></p>
+
+        <p class="card-text">
+          <form action="/userSearch" method="POST">
+
+            <p>Date: <input type="text" id="datepicker" name="day" autocomplete="on" placeholder="YYYY/MM/DD"></p>
+
+            <select type="text" id="rainSearch" name="rainSearch">
+              <option value="0" selected>Sin lluvia</option>
+            </select>
+            <select name="completeSearch" id="">
+              <option value="Casa rural" selected>Casa rural</option>
+            </select>
+
+            <button type="submit" class="boton btn btn-success">me encanta!</button>
+          </form>
+      </div>
+    </div>
+
+    <div class="card results defined">
+
+      <div class="card-body">
+        <p class="card-title"><b>
+            <h4>Dia de Multiaventura</h4>
+          </b></p>
+
+        <p class="card-text">
+          <form action="/userSearch" method="POST">
+
+            <p>Date: <input type="text" id="datepicker" name="day" autocomplete="on" placeholder="YYYY/MM/DD"></p>
+
+            <select type="text" id="rainSearch" name="rainSearch">
+              <option value="0" selected>Sin lluvia</option>
+            </select>
+            <select name="completeSearch" id="">
+              <option value="Multiaventura" selected>Multiavenntura</option>
+            </select>
+
+            <button type="submit" class="boton btn btn-success">me encanta!</button>
+          </form>
+      </div>
+
+    </div>
   </div>
 </div>

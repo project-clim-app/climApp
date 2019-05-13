@@ -24,7 +24,7 @@ const placesSchema = new mongoose.Schema({
   photo: { // "photos"
     type: String,
      required: false,
-     default: '../public/images/logo.png'
+     
   },
   levelPrice: { // algunos no tienen...
     type: String,

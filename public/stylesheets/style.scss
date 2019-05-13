@@ -26,16 +26,6 @@ a:hover{
   box-shadow: 0px 3px 3px 1px rgba(0,0,0,0.2);
 }
 
-// #result {
-//   position: absolute;
-//   width:220px;
-//   max-width:870px;
-//   cursor: pointer;
-//   overflow-y: auto;
-//   max-height: 400px;
-//   box-sizing: border-box;
-//   z-index: 1001;
-//  }
  .link-class:hover{
   background-color:#f1f1f1;
  }
@@ -63,6 +53,7 @@ a:hover{
   box-shadow: 0px 0px 1px 0px rgb(126, 126, 126);   
   border-radius: 5px;
   margin: 2rem 0.2rem 2rem 0.2rem;
+  text-align: center;
 }
 
 .titulo{
@@ -92,6 +83,22 @@ ul, li {
   flex-direction: column;
 }
 
+.thumb {
+  height: 10rem;
+  display: block;
+  margin: 0 auto 1rem;
+  padding: 0.5rem;
+
+}
+.boton {
+  color: #fff !important;
+}
+.defined {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+}
  .jumbotron{
    text-align: center;
  }
@@ -104,3 +111,4 @@ ul, li {
   padding: 1rem;
   box-sizing: border-box;
 }
+

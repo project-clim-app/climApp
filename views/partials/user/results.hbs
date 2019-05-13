@@ -1,21 +1,24 @@
 <div class="card results">
     <div class="card-body">
-        <p class="card-title"><b><h2>{{name}}</h2></b></p>
+        <img src="{{photo}}" alt="{{name}}">
+        <p class="card-title"><b><h4>{{name}}</h4></b></p>
 
         <p class="card-text">
-            <p>{{location}}</p>
-            </p>{{rating}} {{#switch rating}}
+            <p> <p>{{activity}} {{location}} {{rating}}<i class="fas fa-star"></i>
+             {{!-- {{#switch rating}}
             {{#case '3.1'}}<i class="fas fa-star"></i> {{/case}}
             {{#case '4'}} <i class="fas fa-star"></i><i class="fas fa-star"></i> {{/case}}
             {{#case 'luxe'}}<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> {{/case}}
-        {{/switch}} 
-        </p>
-            <p>{{activity}}</p>
-            <p>{{prevision.0.rain}}</p>
-            <p>{{prevision.0.sky}}</p>
-            <p>{{prevision.0.temp.max}}</p>
-            <p>{{prevision.0.temp.min}}</p>
-           <button><a href="{{googlePlaceLink}}">VER FICHA</a></button>
+        {{/switch}}  --}}
+        </p>   
+        <button type="button" class="boton btn btn-success " role="button"><a href="{{googlePlaceLink}}">Ver {{name}}</a></button>
+     
+        {{!-- <button><a href="{{googlePlaceLink}}">Ver {{name}}</a></button> --}}
+        <br>
+        <hr>
+        <p><i class="fas fa-tint"></i> {{prevision.0.rain}}% prob Lluvia</p>
+        {{!-- <p>{{prevision.0.sky}}</p> --}}
+        <p><i class="fas fa-thermometer-full"></i> {{prevision.0.maxTemp}} <i class="fas fa-thermometer-empty"></i> {{prevision.0.minTemp}}</p>
         </p>
     </div>
 </div>

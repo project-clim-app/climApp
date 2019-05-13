@@ -1,14 +1,40 @@
+
+<div class="thumb">
+        {{#switch result.0.prevision.0.sky}} 
+            {{#case 'Poco nuboso'}} <img class="card-img-top" src="./images/sun.png"> {{/case}}
+            {{#case 'Nuboso'}} <img class="card-img-top" src="./images/cloudy.png"> {{/case}}
+            {{#case 'Muy nuboso con lluvia escasa'}} <img class="card-img-top" src="./images/rain_sun.png"> {{/case}}
+            {{#case 'Intervalos nubosos'}} <img class="card-img-top" src="./images/cloudy.png"> {{/case}}
+            {{#case 'Muy nuboso'}} <img class="card-img-top" src="./images/clouds.png"> {{/case}}
+            {{#case 'Nuboso con lluvia escasa'}} <img class="card-img-top" src="./images/rain_sun.png"> {{/case}}
+            {{#case 'Cubierto con lluvia'}} <img class="card-img-top" src="./images/rain.png"> {{/case}}
+            {{#case 'Despejado'}} <img class="card-img-top" src="./images/sun.png"> {{/case}}
+            {{#case 'Nubes altas'}} <img class="card-img-top" src="./images/clouds.png"> {{/case}}
+        {{/switch}}
+        
+    {{!-- <div class="card-body">
+        <p class="card-title"><b>{{date}}</b></p>
+        <p class="card-text">
+            <p><b>{{rain}}%</b> lluvia</p>
+            <p><b>{{sky}}</b></p>
+            <p><b>{{temp.min}}ºC</b> y <b>{{temp.max}}ºC</b></p>
+        </p>
+    </div> --}}
+</div>
+
+
 <div class="titulo">
   {{!-- <h2>Lugares para el día {{day}}, con una probabilidad de lluvia del
     {{result.0.prevision.0.rain}}%</h2> --}}
-    <ul>
+    <h5><ul>
       <li>Día: {{day}}</li>
       <li>Probabilidad de lluvia: {{result.0.prevision.0.rain}}%</li>
       <li>Actividad elegida: {{result.0.activity}}</li>
+    </h5> 
     </ul>
 </div>
 <div class="search">
-  {{#each result as | res|}}
+  {{#each result as | res |}}
   {{>user/results}}
   {{/each}}
 </div>
